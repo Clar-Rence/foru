@@ -1,6 +1,7 @@
 @font-face {
     font-family: Montressat;
     src: url("./assets/font/Montserrat-VariableFont_wght.ttf");
+    font-weight: 500;
 }
 :root {
     --bg-black: ;
@@ -53,6 +54,7 @@ section {
     gap: 20px;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
     align-content: center;
     justify-content: center;
 }
@@ -72,20 +74,19 @@ section {
     box-shadow: var(--shadow);
     background-color: var(--bg-card);
 }
-.promise .description .hint {
-    top: 0;
-    left: 0;
+.promise .guide {
+    top: 5%;
+    left: 10%;
     gap: 20px;
     display: flex;
     position: absolute;
     align-items: center;
-    transform: translateY(-150%);
 }
-.promise .description .hint img {
-    height: 100px;
+.promise .guide img {
+    height: 50px;
 }
-.promise .description .hint p {
-    padding: 20px;
+.promise .guide p {
+    padding: 10px;
     border-radius: 10px;
     background-color: var(--bg-card);
 }
@@ -134,6 +135,7 @@ section {
     gap: 5px;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
     align-content: center;
     justify-content: center;
 }
@@ -147,8 +149,128 @@ section {
 .forgive .hint img {
     height: 100px;
 }
-.forgive .hint p {
+.forgive .hint .text {
+    gap: 10px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+.forgive .hint .text p {
     padding: 20px;
+    border-radius: 10px;
+    transition: 600ms ease-in-out;
+    background-color: var(--bg-card);
+    opacity: 0;
+}
+.forgive .hint .text p.fade {
+    opacity: 1;
+}
+.forgive .guide {
+    top: 5%;
+    left: 25%;
+    gap: 20px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+}
+.forgive .guide img {
+    height: 50px;
+}
+.forgive .guide p {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--bg-card);
+}
+
+.reconcile {
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+}
+.reconcile .description {
+    width: 100%;
+    flex-grow: 1;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    background-color: var(--bg-card);
+}
+.reconcile .description img {
+    height: 50px;
+    z-index: -1;
+    position: absolute;
+    transform: translateY(-75%);
+    transition: var(--smooth);
+}
+.reconcile .description img:nth-child(1) {
+    top: 0;
+    left: 0;
+    height: 60px;
+}
+.reconcile .description img:nth-child(2) {
+    top: 0;
+    right: 0;
+    z-index: -2;
+}
+.reconcile .description img:nth-child(1).hug {
+    top: 0;
+    left: 45%;
+    height: 60px;
+}
+.reconcile .description img:nth-child(2).hug {
+    top: 0;
+    right: 45%;
+}
+.reconcile .guide {
+    top: 5%;
+    left: 10%;
+    gap: 20px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+}
+.reconcile .guide img {
+    height: 50px;
+}
+.reconcile .guide p {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--bg-card);
+}
+.reconcile .description p {
+    font-size: 20px;
+}
+.reconcile .left,
+.reconcile .right {
+    width: 45%;
+    flex-grow: 1;
+    padding: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    background-color: var(--bg-card);
+}
+.reconcile .final {
+    top: 5%;
+    left: 35%;
+    gap: 20px;
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    transition: var(--smooth);
+}
+.reconcile .final img {
+    height: 50px;
+}
+.reconcile .final p {
+    padding: 10px;
     border-radius: 10px;
     background-color: var(--bg-card);
 }

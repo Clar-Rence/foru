@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activate Keypress After Button Click</title>
+</head>
+<body>
+
+  <h1>Press "N" for Next Action</h1>
+  <p id="output">Press the button to activate the key press.</p>
+  <button id="activateButton">Activate Key Press</button>
+
+  <script>
+    // Function that will be triggered when "N" is pressed
+    function nextAction() {
+      document.getElementById("output").textContent = "You pressed 'N'! Next action triggered.";
+      console.log("Next action triggered!");
+    }
+
+    // Function to activate the keypress event listener after the button is clicked
+    function activateKeyPress() {
+      document.getElementById("output").textContent = "Key press activated. Press 'N' for Next.";
+
+      // Add the event listener for keydown only after the button is clicked
+      document.addEventListener("keydown", function(event) {
+        if (event.key === "N" || event.key === "n") {
+          nextAction();
+        }
+      });
+    }
+
+    // Add event listener to the button
+    document.getElementById("activateButton").addEventListener("click", activateKeyPress);
+  </script>
+
+</body>
+</html>
