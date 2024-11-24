@@ -1,0 +1,154 @@
+@font-face {
+    font-family: Montressat;
+    src: url("./assets/font/Montserrat-VariableFont_wght.ttf");
+}
+:root {
+    --bg-black: ;
+    --bg-white: ;
+    --bg-body-1: #b2d6c7;
+    --bg-body-2: #ffffff;
+    --bg-card: #f9f9f9;
+
+    --clr-black: ;
+    --clr-white: #e3e3e3;
+    --clr-dino: #82b89b;
+
+    --shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+    --smooth: 3s ease-in-out;
+    --animation: 600ms ease-in-out;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    text-align: justify;
+    box-sizing: border-box;
+    font-family: Montressat, sans-serif;
+}
+body {
+    width: 900px;
+    height: 100dvh;
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 1200px;
+    position: relative;
+    color: var(--clr-black);
+    background-color: var(--bg-body-1);
+}
+.container {
+    top: 0;
+    height: 400vh;
+    position: absolute;
+    transition: var(--smooth);
+}
+section {
+    height: 100vh;
+    width: 100%;
+}
+
+/* Promise Section */
+.promise {
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.promise div {
+    transition: 600ms ease-out;
+}
+.promise div.fade {
+    opacity: 0;
+}
+.promise .description {
+    width: 100%;
+    flex-grow: 1;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    background-color: var(--bg-card);
+}
+.promise .description .hint {
+    top: 0;
+    left: 0;
+    gap: 20px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    transform: translateY(-150%);
+}
+.promise .description .hint img {
+    height: 100px;
+}
+.promise .description .hint p {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--bg-card);
+}
+.promise .description h1 {
+    font-size: 40px;
+    color: var(--clr-dino);
+}
+.promise .left,
+.promise .right {
+    width: 45%;
+    flex-grow: 1;
+    padding: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    background-color: var(--bg-card);
+}
+.promise .left img {
+    left: 0;
+    height: 50px;
+    position: absolute;
+    transform: translateX(-100%);
+    transition: var(--animation);
+}
+.promise .left:hover img {
+    transform: translateX(-50%);
+}
+.promise .left h3 {
+    color: var(--clr-dino);
+}
+.promise .right img {
+    right: 0;
+    opacity: 0;
+    height: 50px;
+    position: absolute;
+    transition: var(--animation);
+    transform: translateX(-20%);
+}
+.promise .right:hover img {
+    opacity: 1;
+}
+
+/* Forgive Section */
+.forgive {
+    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.forgive .hint {
+    top: 0;
+    left: 0;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+}
+.forgive .hint img {
+    height: 100px;
+}
+.forgive .hint p {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--bg-card);
+}
